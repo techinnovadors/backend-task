@@ -35,6 +35,9 @@ create table if not exists mydb.matches
     foreign key (tourId) references tours(id)
 );
 
+CREATE INDEX idx_tours_name ON tours (name);
+CREATE INDEX idx_matches_tourId ON matches (tourId);
+
 -- seed data
 insert ignore into mydb.sports (id, name) values (1, 'Cricket');
 insert ignore into mydb.sports (id, name) values (2, 'Football');
