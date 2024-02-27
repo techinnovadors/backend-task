@@ -7,7 +7,7 @@ const getAllTours = async () => {
 }
 
 const getMatchesByTourName = async params => {
-    const statement = 'SELECT * FROM matches WHERE tourId IN (SELECT id FROM tours WHERE name = ?)';
+    const statement = 'SELECT * FROM matches INNER JOIN tours on matches.tourId = tours.id where tours.name = ?';
     const parameters = [ params.name ];
     return await mysql.query(statement, parameters);
 }

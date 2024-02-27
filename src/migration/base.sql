@@ -1,3 +1,8 @@
+--- drop statements
+DROP TABLE IF EXISTS mydb.matches;
+DROP TABLE IF EXISTS mydb.tours;
+DROP TABLE IF EXISTS mydb.sports;
+
 -- create tables
 create table if not exists mydb.sports
 (
